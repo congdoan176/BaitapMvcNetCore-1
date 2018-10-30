@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewData["Title"] = "Student";
+}
+@model IEnumerable<Student>;
+<h2>List Student</h2>
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>RolNumber</th>
+                <th>Acction</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                @foreach (var item in Model)
+                {
+            <tr id="@item.Id">
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.RollNumber</td>
+                <td>
+                    <a href="/Student/Edit?id=@item.Id">Edit</a>
+                    <a class="btnDelete" id="@item.Id">Delete</a>
+                </td>
+            </tr>
+                    
+                }
+        </tbody>
+        
+    </table>
+</div>
+
